@@ -1,0 +1,406 @@
+
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+<title>JANJUA TRADERS - Product Video</title>
+
+<style>
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    background:#f2f4f7;
+    font-family:Arial,sans-serif;
+    color:#111827;
+}
+
+.container{
+    width:100%;
+    max-width:520px;
+    margin:auto;
+    padding:10px;
+}
+
+/* VIDEO */
+
+.video-box{
+    position:relative;
+    width:100%;
+    background:#000;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
+}
+
+video{
+    width:100%;
+    display:block;
+    aspect-ratio:9/16;
+    object-fit:cover;
+    background:#000;
+}
+
+/* ORDER BUTTON */
+
+.order-button{
+    position:absolute;
+    right:12px;
+    bottom:15px;
+
+    border:0;
+    border-radius:25px;
+
+    padding:10px 17px;
+
+    background:#ffffff;
+    color:#111827;
+
+    font-size:14px;
+    font-weight:bold;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.35);
+
+    cursor:pointer;
+}
+
+.order-button:active{
+    transform:scale(.95);
+}
+
+/* PRODUCT INFO */
+
+.product-box{
+    background:white;
+    margin-top:10px;
+    padding:15px;
+    border-radius:15px;
+}
+
+.product-name{
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:8px;
+}
+
+.price{
+    font-size:23px;
+    font-weight:bold;
+}
+
+/* ORDER FORM */
+
+#orderArea{
+    display:none;
+    margin-top:12px;
+}
+
+.form-box{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
+}
+
+.form-title{
+    font-size:21px;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.form-group{
+    margin-bottom:12px;
+}
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+input,
+textarea,
+select{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:9px;
+    font-size:15px;
+}
+
+textarea{
+    min-height:90px;
+}
+
+.submit-button{
+    width:100%;
+    border:0;
+    padding:14px;
+    border-radius:10px;
+    background:#111827;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.close-button{
+    width:100%;
+    margin-top:8px;
+    padding:11px;
+    border:0;
+    border-radius:9px;
+    background:#e5e7eb;
+    cursor:pointer;
+}
+
+/* SUCCESS */
+
+.success{
+    display:none;
+    margin-top:12px;
+    background:#e8f7ed;
+    color:#16753b;
+    padding:15px;
+    border-radius:10px;
+    text-align:center;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =========================
+         VIDEO
+    ========================== -->
+
+    <div class="video-box">
+
+        <!--
+        اپنی ویڈیو کا نام یہاں لکھیں۔
+        مثال:
+        fan.mp4
+        fan.webm
+        product.mp4
+        -->
+
+        <video
+            id="productVideo"
+            controls
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source
+                id="videoSource"
+                src="fan.mp4">
+
+            آپ کا browser اس video کو support نہیں کرتا۔
+        </video>
+
+        <!-- ORDER BUTTON -->
+
+        <button
+            class="order-button"
+            onclick="openOrderForm()">
+
+            🛒 Order Form
+
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         PRODUCT INFORMATION
+    ========================== -->
+
+    <div class="product-box">
+
+        <div
+            id="productName"
+            class="product-name">
+
+            Premium Fan
+
+        </div>
+
+        <div
+            id="productPrice"
+            class="price">
+
+            Rs. 2,300
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         ORDER FORM
+    ========================== -->
+
+    <div id="orderArea">
+
+        <div class="form-box">
+
+            <div class="form-title">
+                🛒 Order Form
+            </div>
+
+            <form
+                id="orderForm"
+                action="https://formsubmit.co/ajax/thanksyou0339@gmail.com"
+                method="POST">
+
+                <!-- NAME -->
+
+                <div class="form-group">
+
+                    <label>
+                        نام
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Customer_Name"
+                        required>
+
+                </div>
+
+
+                <!-- MOBILE -->
+
+                <div class="form-group">
+
+                    <label>
+                        موبائل / WhatsApp نمبر
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="Mobile_WhatsApp"
+                        required>
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="form-group">
+
+                    <label>
+                        مکمل گھر کا پتہ
+                    </label>
+
+                    <textarea
+                        name="Delivery_Address"
+                        required>
+                    </textarea>
+
+                </div>
+
+
+                <!-- QUANTITY -->
+
+                <div class="form-group">
+
+                    <label>
+                        Quantity
+                    </label>
+
+                    <select name="Quantity">
+
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- COLOR -->
+
+                <div class="form-group">
+
+                    <label>
+                        Color
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Color">
+
+                </div>
+
+
+                <!-- SIZE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Size
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Size">
+
+                </div>
+
+
+                <!-- HIDDEN PRODUCT DATA -->
+
+                <input
+                    type="hidden"
+                    name="Product"
+                    value="Premium Fan">
+
+                <input
+                    type="hidden"
+                    name="Product_Price"
+                    value="2300">
+
+                <input
+                    type="hidden"
+                    name="Original_Supplier_Link"
+                    value="https://share.markaz.app/p/m/762908?screen=product_markaz&id=762908">
+
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="JANJUA TRADERS - New Product Order">
+
+                <input
+                    type="hidden"
+                    name="_template"
+                    value="table">
+
+                <input
+                    type="hidden"
+                    name="_captcha"
+                    value="false">
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="submit-button">
+
+                    ORDER CONFIRM کریں
+
+                </button>
+
+            </form>
